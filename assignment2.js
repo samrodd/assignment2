@@ -12,17 +12,19 @@ Array.prototype.myEach = function(callbackFn) {
 };
 
 
+
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
     for(let i = 0; i < this.length; i++){
         if(this[i] === undefined) continue;
-
-        //element
-        //element, index
-        //element, index, array
-        //element, index, array, thisArg
+        const mappedOutput = [];
+        for(let i = 0; i < this.length; i++){
+            mappedOutput.push(callbackFn(this[i], i, this));
+        }
+        return mappedOutput;
     }
 };
+
 
 // FILTER //
 Array.prototype.myFilter = function() {
@@ -53,7 +55,6 @@ Array.prototype.myIncludes = function() {
 Array.prototype.myIndexOf = function() {
 
 };
-//test
 // PUSH //
 Array.prototype.myPush = function(...args) {
     let arg_i = 0;
