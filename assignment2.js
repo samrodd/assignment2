@@ -25,9 +25,21 @@ Array.prototype.myMap = function(callbackFn) {
 
 
 // FILTER //
-Array.prototype.myFilter = function() {
-
+Array.prototype.myFilter = function(callbackFn) {
+    const filteredOutput = [];
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined) continue;
+        if(callbackFn(this[i], i, this)===true){
+            filteredOutput.push(this[i]);
+        }
+        else{
+            continue;
+        }
+    }
+    return filteredOutput;
 };
+
+
 
 // SOME //
 Array.prototype.mySome = function() {
