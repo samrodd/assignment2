@@ -15,14 +15,12 @@ Array.prototype.myEach = function(callbackFn) {
 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
+    const mappedOutput = [];
     for(let i = 0; i < this.length; i++){
         if(this[i] === undefined) continue;
-        const mappedOutput = [];
-        for(let i = 0; i < this.length; i++){
-            mappedOutput.push(callbackFn(this[i], i, this));
-        }
-        return mappedOutput;
+        mappedOutput.push(callbackFn(this[i], i, this));
     }
+    return mappedOutput;
 };
 
 
