@@ -13,8 +13,15 @@ Array.prototype.myEach = function(callbackFn) {
 
 
 // MAP //
-Array.prototype.myMap = function() {
+Array.prototype.myMap = function(callbackFn) {
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined) continue;
 
+        //element
+        //element, index
+        //element, index, array
+        //element, index, array, thisArg
+    }
 };
 
 // FILTER //
@@ -46,8 +53,7 @@ Array.prototype.myIncludes = function() {
 Array.prototype.myIndexOf = function() {
 
 };
-
-arr = [1, 2, 3];
+//test
 // PUSH //
 Array.prototype.myPush = function(...args) {
     let arg_i = 0;
@@ -59,9 +65,6 @@ Array.prototype.myPush = function(...args) {
     }
     return this.length;
 };
-
-arr.myPush(4,5,6);
-console.log(arr);
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function() {
