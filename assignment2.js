@@ -72,8 +72,23 @@ Array.prototype.myEvery = function(callbackFn) {
 
 
 // REDUCE //
-Array.prototype.myReduce = function() {
-
+Array.prototype.myReduce = function(callbackFn) {
+    var t = 1;
+    var x = this[0];
+    while(x === undefined && t < this.length){
+        x = this[t];
+        t++;
+    }
+    for(let i = t; i < this.length; i++){
+        if(this[i] === undefined) continue;
+        x = callbackFn(x,this[i]);
+    }
+    if(x === undefined){
+        return "Error: Reduce of empty array with no initial value"
+    }
+    else{
+        return x;
+    }
 };
 
 // INCLUDES //
