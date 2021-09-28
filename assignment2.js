@@ -40,10 +40,19 @@ Array.prototype.myFilter = function(callbackFn) {
 };
 
 
-
 // SOME //
-Array.prototype.mySome = function() {
-
+Array.prototype.mySome = function(callbackFn) {
+    var x = false;
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined) continue;
+        if(callbackFn(this[i], i, this) === true){
+            x = true;
+        }
+        else{
+            continue;
+        }
+    }
+    return x;
 };
 
 // EVERY //
