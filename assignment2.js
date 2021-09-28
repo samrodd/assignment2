@@ -106,7 +106,6 @@ Array.prototype.myIncludes = function(searchElement) {
     return false;
 };
 
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement, fromIndex) {
@@ -119,14 +118,6 @@ Array.prototype.myIndexOf = function(searchElement, fromIndex) {
     }
     return -1;
 };
-
-console.log(beasts.myIndexOf('bison'));
-// start from index 2
-console.log(beasts.myIndexOf('bison', 2));
-// expected output: 4
-
-console.log(beasts.myIndexOf('giraffe'));
-// expected output: -1
 
 
 
@@ -160,9 +151,15 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
 
 
 // KEYS //
-Object.grabKeys = function() {
-
+Object.grabKeys = function(obj) {
+    const keys = [];
+    for(var i in obj){
+        keys.push(i);
+    }
+    return keys;
 };
+
+
 
 // VALUES //
 Object.grabValues = function() {
