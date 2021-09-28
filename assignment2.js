@@ -106,17 +106,28 @@ Array.prototype.myIncludes = function(searchElement) {
     return false;
 };
 
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement, fromIndex) {
-    for(let i = 0; i < this.length; i++){
+    var startPos = (fromIndex === undefined) ? 0 : fromIndex;
+    for(let i = startPos; i < this.length; i++){
         if(this[i] === undefined) continue;
-        if(this[i] === searchelement){
+        if(this[i] === searchElement){
             return i;
         }
     }
     return -1;
 };
+
+console.log(beasts.myIndexOf('bison'));
+// start from index 2
+console.log(beasts.myIndexOf('bison', 2));
+// expected output: 4
+
+console.log(beasts.myIndexOf('giraffe'));
+// expected output: -1
+
 
 
 // PUSH //
@@ -131,10 +142,15 @@ Array.prototype.myPush = function(...args) {
     return this.length;
 };
 
+
+
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function() {
+Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
 
 };
+
+
+
 
 // KEYS //
 Object.grabKeys = function() {
