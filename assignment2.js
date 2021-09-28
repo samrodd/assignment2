@@ -146,7 +146,14 @@ Array.prototype.myPush = function(...args) {
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
-
+    var startPos = (fromIndex === undefined) ? this.length : fromIndex;
+    for(let i = startPos; i >-1; i--){
+        if(this[i] === undefined) continue;
+        if(this[i] === searchElement){
+            return i;
+        }
+    }
+    return -1;
 };
 
 
