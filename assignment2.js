@@ -160,9 +160,14 @@ Object.grabKeys = function(obj) {
 };
 
 
-
 // VALUES //
-Object.grabValues = function() {
-
+Object.grabValues = function(obj) {
+    const values = [];
+    for(var i in obj){
+        values.push(obj[i]);
+    }
+    return values;
 };
+
+
 
