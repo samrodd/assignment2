@@ -108,9 +108,17 @@ Array.prototype.myIncludes = function(searchElement) {
 
 
 // INDEXOF //
-Array.prototype.myIndexOf = function() {
-
+Array.prototype.myIndexOf = function(searchElement, fromIndex) {
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined) continue;
+        if(this[i] === searchelement){
+            return i;
+        }
+    }
+    return -1;
 };
+
+
 // PUSH //
 Array.prototype.myPush = function(...args) {
     let arg_i = 0;
