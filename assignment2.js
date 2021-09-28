@@ -55,10 +55,21 @@ Array.prototype.mySome = function(callbackFn) {
     return x;
 };
 
-// EVERY //
-Array.prototype.myEvery = function() {
 
+// EVERY //
+Array.prototype.myEvery = function(callbackFn) {
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined) continue;
+        if(callbackFn(this[i], i, this) === false ){
+            return false;
+        }
+        else{
+            continue;
+        }
+    }
+    return true;
 };
+
 
 // REDUCE //
 Array.prototype.myReduce = function() {
